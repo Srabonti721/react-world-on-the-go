@@ -4,3 +4,9 @@
     margin: 10px;
     padding: 10px;
 }
+.country{
+    border: 2px solid tomato;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
+}

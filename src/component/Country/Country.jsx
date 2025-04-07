@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './Country.css';
 
-const Country = ({ country }) => {
+const Country = ({ country , handleVisitedCountries,handleVisitedFlag }) => {
     const [vidited, setVisited] = useState(false);
+
+    // console.log(handleVisitedCountries);
     // console.log(country.flags);
 
     const handleVisited = () => {
@@ -12,7 +14,8 @@ const Country = ({ country }) => {
         // else {
         //     setVisited(true)
         // }
-        setVisited(!vidited)
+        setVisited(!vidited);
+        handleVisitedCountries(country);
     }
 
     return (
@@ -22,6 +25,7 @@ const Country = ({ country }) => {
             <p>independent : {country.independent ? 'free' : 'not free'}</p>
             <p>population : {country.population}</p>
             <button className={vidited?'btn-visited':'btn-not-visited'} onClick={handleVisited}>{vidited ? 'Visited' : 'Not visited'}</button>
+            <button onClick={()=>handleVisitedFlag(country.flags.png)}>add visited flag :</button>
 
         </div>
     );
